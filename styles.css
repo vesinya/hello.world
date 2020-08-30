@@ -73,7 +73,7 @@ a:link {
 }
 .mail {
     position: absolute;
-    right: 20px;
+    right: -40px;
     bottom: 20px;
     animation: fadein 2s;
     -webkit-animation: fadein 2s;   Safari and Chrome */  
