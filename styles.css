@@ -23,12 +23,12 @@
 body {
     background-color: #aaaaaa;
     text-transform: uppercase;
-    line-height: 24px;
+    line-height: 20px;
     -webkit-font-smoothing: antialiased;
 }
 h1{
-    width: 400px;
-    font-size: 18px;
+    width: 300px;
+    font-size: 16px;
     font-family: 'Favorit Pro';
     font-weight: normal;
     font-style: normal;
@@ -73,7 +73,7 @@ a:link {
 }
 .mail {
     position: absolute;
-    right: -115px;
+    right: 20px;
     bottom: 20px;
     animation: fadein 2s;
     -webkit-animation: fadein 2s;   Safari and Chrome */  
