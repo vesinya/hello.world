@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background-color: black;
+      padding: 20px;
+    }
+
+    body {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+    }
+    .z-parent {
+      position: relative;
+    }
+
+    .z-child {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      cursor: pointer;
+      font-size: 20px;
+    }
+  </style>
+  <body>
+    <div class="z-parent"></div>
+    <script>
+      function randomColor() {
+        return (
+          "rgb(" +
+          Math.floor(Math.random() * 255) +
+          "," +
+          Math.floor(Math.random() * 255) +
+          "," +
+          Math.floor(Math.random() * 255) +
+          ")"
+        );
+      }
+      function randomGradient() {
+        return (
+          "linear-gradient(" +
+          randomColor() +
+          "," +
+          randomColor() +
+          "," +
+          randomColor() +
+          ")"
+        );
+      }
+      const shift = 25;
+      const parent = document.querySelector(".z-parent");
+      for (let i = 0; i < 21; i++) {
+        const child = document.createElement("div");
+        child.classList.add("z-child");
+        child.style.top = i * shift + "px";
+        child.style.left =
+          i <= 10 ? i * shift + "px" : shift * 10 - (i - 10) * shift + "px";
+        // child.style.backgroundColor = randomColor();
+        child.style.background = randomGradient();
+        parent.appendChild(child);
+      }
+
+      let maxZIndex = 1;
+      document.querySelectorAll(".z-child").forEach(function (child) {
+        child.addEventListener("mouseenter", function () {
+          child.style.zIndex = maxZIndex++;
+          child.innerHTML = "z-index: " + maxZIndex;
+        });
+      });
+    </script>
+  </body>
+</html>
